@@ -53,9 +53,6 @@ onehot_geo = pd.DataFrame(onehot_geo, columns = onehot_encoder.get_feature_names
 # Combine one-hot encoded columns with input data
 input_data = pd.concat([input_data.reset_index(drop=True), onehot_geo], axis=1)
 
-# Scale the input data
-input_data['Gender'] = label_encoder.transform(input_data['Gender'])
-
 input_data_scaled = scaler.transform(input_data)
 
 
